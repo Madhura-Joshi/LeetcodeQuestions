@@ -1,0 +1,21 @@
+class Solution {
+    public String addStrings(String num1, String num2) {
+        if(num1 == null)
+            return num2;
+        if(num2 == null)
+            return num1;
+        
+        int i = num1.length()-1, j = num2.length()-1;
+        StringBuilder result = new StringBuilder();
+        int carry =0, digit = 0;
+        
+        while(i>=0 || j>=0 || carry != 0){
+            digit = carry;
+            digit += i>=0 ? num1.charAt(i--)-'0' : 0;
+            digit += j>=0 ? num2.charAt(j--)-'0' : 0;
+            carry = digit/10;
+            result.append(digit%10);
+        }
+        return result.reverse().toString();
+    }
+}
