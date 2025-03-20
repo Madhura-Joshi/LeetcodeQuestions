@@ -1,0 +1,17 @@
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+
+        int max = -1;
+        for(String i : sentences){
+            int count = 1;
+            for (char c : i.toCharArray())
+            {
+                if (c == ' ') count++;
+            }
+            if(count>max){
+                max = count;
+            }
+        }
+        return  max;
+    }
+}
