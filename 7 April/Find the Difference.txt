@@ -1,0 +1,19 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        char result = 0;  // Step 1: Initialize result as 0
+        
+        // Step 2: XOR all characters in `s`
+        for (char ch : s.toCharArray()) {
+            result ^= ch;  
+        }
+        
+        // Step 3: XOR all characters in `t`
+        for (char ch : t.toCharArray()) {
+            result ^= ch;
+        }
+        
+        return result;  // Step 4: The remaining character is the added one
+    }
+}
+
+
